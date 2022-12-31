@@ -1,9 +1,8 @@
 import cv2
   
-  
 # define a video capture object
 vid = cv2.VideoCapture(0)
-i=0
+i=20
 c=0
 while(True):
     c+=1
@@ -12,15 +11,12 @@ while(True):
     # by frame
     ret, frame = vid.read()
     roi=frame[100:500, 100:500]
-        
-    
-    cv2.rectangle(frame,(100,100),(500,500),(0,255,0),0)    
+    cv2.rectangle(frame,(90,90),(500,500),(0,255,0),0)    
     hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
     # Display the resulting frame
     cv2.imshow('frame', frame)
     #take image from the rectangle 
     cv2.imshow('roi', roi)
-
     #take a photo every 2 seconds and save it
     print(c)
     if c%100==0:
@@ -29,12 +25,6 @@ while(True):
         cv2.imwrite("hand"+str(i)+".jpg", roi)
         #convert int to string
         #i=str(i)
-
-
-
-
-    
-      
     # the 'q' button is set as the
     # quitting button you may use any
     # desired button of your choice
