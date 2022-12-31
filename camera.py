@@ -2,7 +2,7 @@ import cv2
   
 # define a video capture object
 vid = cv2.VideoCapture(0)
-i=20
+i=46
 c=0
 while(True):
     c+=1
@@ -19,10 +19,10 @@ while(True):
     cv2.imshow('roi', roi)
     #take a photo every 2 seconds and save it
     print(c)
-    if c%100==0:
+    if c%20==0:
         i=i+1
         #save the image
-        cv2.imwrite("hand"+str(i)+".jpg", roi)
+        cv2.imwrite("own/paper/hand"+str(i)+".jpg", roi)
         #convert int to string
         #i=str(i)
     # the 'q' button is set as the
